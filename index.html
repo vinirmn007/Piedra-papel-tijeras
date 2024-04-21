@@ -15,11 +15,18 @@
         <main>
             <p>Tres (3) puntos para ganar</p>
         
-            <ul id="marcador">
-                <li><h2 id="ronda">Ronda 0</h2></li>
-                <li><h2 id="puntosUsuario">Puntos Usuario: 0</h2></li>
-                <li><h2 id="puntosPC">Puntos Maquina: 0</h2></li>
-            </ul>
+            <div id="containerMarcador">
+                <ul id="marcador">
+                    <li><h2 id="ronda">Ronda 0</h2></li>
+                    <li><h2 id="puntosUsuario">Puntos Usuario: 0</h2></li>
+                    <li><h2 id="puntosPC">Puntos Maquina: 0</h2></li>
+                </ul>
+            </div>
+
+            <button class= "botones-accion" id="btnPiedra">Piedra</button>
+            <button class= "botones-accion" id="btnPapel">Papel</button>
+            <button  class= "botones-accion" id="btnTijera">Tijera</button>
+            <button id="btnVolverJugar">Volver a jugar</button><br>
             
             <article id="bloqueUsuario">
                 <h2 id="usuario">Usuario:</h2>
@@ -27,18 +34,11 @@
             
             <article id="bloquePC">
                 <h2 id="pc">Maquina:</h2>
-            </article>
-            
-            
-            <button class= "botones-accion" id="btnPiedra">Piedra</button>
-            <button class= "botones-accion" id="btnPapel">Papel</button>
-            <button  class= "botones-accion" id="btnTijera">Tijera</button>
-            <button id="btnVolverJugar">Volver a jugar</button><br>
-            
+            </article>            
             
             <div id="ganador"></div>
         </main>
-        <footer>&copy Eddie Casanas 2023</footer>
+        <footer>Creador: Eddie Casanas (2023) <br> Clonado y modificado por: Alexis Roman (2024)</footer>
     </div>
     <script src="index.js"></script>  
 </body>
