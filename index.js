@@ -12,10 +12,10 @@ let botones = document.querySelectorAll(".botones-accion");
 let btnVolverJugar = document.getElementById("btnVolverJugar");
 
 botones.forEach((boton) =>{
-    boton.addEventListener("click",jugar);
+    boton.addEventListener("click", jugar);
 });
 
-btnVolverJugar.addEventListener("click",volverAJugar);
+btnVolverJugar.addEventListener("click", volverAJugar);
 
 function generarOpcionPC(){
     let opcionPC = Math.floor(Math.random() * 3) + 1;
@@ -40,42 +40,53 @@ function darPuntuacion(opcionUsuario,opcionPC){
     switch(opcionUsuario){
         case "Piedra":
             imagenUsuario.src = "imagenes/piedra.jpg";
-            if(opcionPC == "Papel"){
-                imagenPC.src = "imagenes/papel.jpg";
-                puntosPC +=1;
-            }else if(opcionPC == "Tijera"){
-                imagenPC.src = "imagenes/tijera.jpg";
-                puntosUsuario += 1;
-            }else{
-                imagenPC.src = "imagenes/piedra.jpg";
-                imagenPC.style.transform = "rotateY(180deg)";
+            switch(opcionPC) {
+                case "Papel":
+                    imagenPC.src = "imagenes/papel.jpg";
+                    puntosPC +=1;
+                    break;
+                case "Tijera":
+                    imagenPC.src = "imagenes/tijera.jpg";
+                    puntosUsuario += 1;
+                    break;
+                default:
+                    imagenPC.src = "imagenes/piedra.jpg";
+                    imagenPC.style.transform = "rotateY(180deg)";
             }
             break;
         case "Papel":
             imagenUsuario.src = "imagenes/papel.jpg";
-            if(opcionPC == "Tijera"){
-                imagenPC.src = "imagenes/tijera.jpg";
-                puntosPC +=1;
-            }else if(opcionPC == "Piedra"){
-                imagenPC.src = "imagenes/piedra.jpg";
-                imagenPC.style.transform = "rotateY(180deg)";
-                puntosUsuario +=1;
-            }else{
-                imagenPC.src = "imagenes/papel.jpg";
+            switch (opcionPC) {
+                case "Tijera":
+                    imagenPC.src = "imagenes/tijera.jpg";
+                    puntosPC +=1;
+                    break;
+                case "Piedra":
+                    imagenPC.src = "imagenes/piedra.jpg";
+                    imagenPC.style.transform = "rotateY(180deg)";
+                    puntosUsuario +=1;
+                    break;
+                default:
+                    imagenPC.src = "imagenes/papel.jpg";
+                    break;
             }
             break;
         case "Tijera":
             imagenUsuario.src = "imagenes/tijera.jpg";
             imagenUsuario.style.transform = "rotateY(180deg)";
-            if(opcionPC == "Piedra"){
-                imagenPC.src = "imagenes/piedra.jpg";
-                imagenPC.style.transform = "rotateY(180deg)";
-                puntosPC += 1;
-            }else if(opcionPC == "Papel"){
-                imagenPC.src = "imagenes/papel.jpg";
-                puntosUsuario += 1;
-            }else{
-                imagenPC.src = "imagenes/tijera.jpg";
+            switch (opcionPC) {
+                case "Piedra":
+                    imagenPC.src = "imagenes/piedra.jpg";
+                    imagenPC.style.transform = "rotateY(180deg)";
+                    puntosPC += 1;
+                    break;
+                case "Papel":
+                    imagenPC.src = "imagenes/papel.jpg";
+                    puntosUsuario += 1;
+                    break;
+                default:
+                    imagenPC.src = "imagenes/tijera.jpg";
+                    break;
             }
             break;
     }
