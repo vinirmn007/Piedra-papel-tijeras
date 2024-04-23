@@ -111,8 +111,10 @@ function verificarGanador(){
         botones.forEach((boton) => {boton.disabled = true});
         if(puntosPC == 3){
             ganador.textContent = "La maquina ha ganado";
+            alert("La maquina ha ganado");
         }else if(puntosUsuario == 3){
             ganador.textContent = "El usuario ha ganado";
+            alert("El usuario ha ganado");
         }
     }
 }
